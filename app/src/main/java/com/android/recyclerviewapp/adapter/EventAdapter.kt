@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.model.Event
 import com.android.recyclerviewapp.model.EventArray
+import java.text.SimpleDateFormat
 
 class EventAdapter(
     private val eventClickedListener:OnItemClickListener,
@@ -16,8 +17,18 @@ class EventAdapter(
 
     // This method will update our data set
     fun updateEventData(event: Event) {
-        eventList.add(0, event)
-        // this guy will notify adapter a new item has been introduces
+
+        var date = SimpleDateFormat("dd/M/yyyy").parse(event.date).time
+
+        for (item in eventList) {
+            var itemDate = SimpleDateFormat("dd/M/yyyy").parse(item.date).time
+            if (date <= itemDate) {
+                eventList.add(eventList.indexOf(item), event)
+                notifyItemInserted(eventList.indexOf(event))
+                return
+            }
+        }
+        eventList.add(eventList.size,event)
         notifyItemInserted(eventList.indexOf(event))
     }
 
