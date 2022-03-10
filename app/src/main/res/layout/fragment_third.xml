@@ -10,37 +10,35 @@
         android:id="@+id/event_title_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="10dp"
         android:text="EVENT TITLE"
-        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/event_category_et"/>
 
     <TextView
         android:id="@+id/event_category_et"
         android:text="EVENT CATEGORY"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_title_et" />
+        app:layout_constraintTop_toBottomOf="@+id/event_title_et"
+        app:layout_constraintBottom_toTopOf="@id/event_calendar"/>
 
     <CalendarView
         android:id="@+id/event_calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@id/daysLeft"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_category_et" />
+        app:layout_constraintTop_toBottomOf="@+id/event_category_et"
+        app:layout_constraintVertical_bias="0.5"/>
 
     <TextView
         android:id="@+id/daysLeft"
