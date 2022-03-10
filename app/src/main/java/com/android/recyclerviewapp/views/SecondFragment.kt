@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.databinding.FragmentSecondBinding
 import com.android.recyclerviewapp.model.Event

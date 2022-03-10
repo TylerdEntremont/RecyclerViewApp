@@ -2,7 +2,6 @@ package com.android.recyclerviewapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
 import com.android.recyclerviewapp.databinding.ActivityMainBinding
 import com.android.recyclerviewapp.views.FirstFragment
 

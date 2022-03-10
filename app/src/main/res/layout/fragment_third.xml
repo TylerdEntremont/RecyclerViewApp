@@ -10,7 +10,7 @@
         android:id="@+id/event_title_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EVENT TITLE"
+        android:text="@string/eventTitle"
         android:gravity="center"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/event_category_et"
-        android:text="EVENT CATEGORY"
+        android:text="@string/eventCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

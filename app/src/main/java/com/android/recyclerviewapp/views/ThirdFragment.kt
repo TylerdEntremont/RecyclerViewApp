@@ -43,7 +43,7 @@ class ThirdFragment : Fragment() {
         binding.eventCategoryEt.text=event.category
 
         val eventDateLong = SimpleDateFormat("dd/M/yyyy").parse(event.date).time
-        binding.daysLeft.text = getString(R.string.DaysLeft)+((eventDateLong -binding.eventCalendar.date)/86400000 + 1).toString()
+        (getString(R.string.DaysLeft)+((eventDateLong -binding.eventCalendar.date)/86400000 + 1).toString()).also { binding.daysLeft.text = it }
         binding.eventCalendar.date = eventDateLong
 
 

@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.adapter.EventAdapter
 import com.android.recyclerviewapp.adapter.OnItemClickListener
 import com.android.recyclerviewapp.databinding.FragmentFirstBinding
@@ -95,7 +93,6 @@ class FirstFragment : Fragment(), OnItemClickListener {
            supportFragmentManager = requireActivity().supportFragmentManager,
            ThirdFragment.newInstance(event)
        )
-        //findNavController().navigate(R.id.action_FirstFragment_to_ThirdFragment)
     }
 
 

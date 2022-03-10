@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="base">Default</string>
     <string name="DaysLeft">Days left: </string>
+    <string name="eventTitle">EVENT TITLE</string>
+    <string name="eventCategory">EVENT CATEGORY</string>
+    <string name="eventDate">EVENT DATE</string>
+    <string name="plusSign">a plus sign</string>
+    <string name="done">DONE</string>
 </resources>
