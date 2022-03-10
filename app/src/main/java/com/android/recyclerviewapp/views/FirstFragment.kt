@@ -92,9 +92,10 @@ class FirstFragment : Fragment(), OnItemClickListener {
 
     override fun onItemClick(event: Event) {
         fragmentNavigation(
-            supportFragmentManager = requireActivity().supportFragmentManager,
-            ThirdFragment.newInstance(event)
-        )
+           supportFragmentManager = requireActivity().supportFragmentManager,
+           ThirdFragment.newInstance(event)
+       )
+        //findNavController().navigate(R.id.action_FirstFragment_to_ThirdFragment)
     }
 
 

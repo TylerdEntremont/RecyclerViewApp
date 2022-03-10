@@ -3,20 +3,24 @@ package com.android.recyclerviewapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.android.recyclerviewapp.databinding.ActivityMainBinding
 import com.android.recyclerviewapp.views.FirstFragment
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+        //findNavController(R.id.main_frag_container)
+
         fragmentNavigation(supportFragmentManager, FirstFragment.newInstance())
+
     }
 
 }

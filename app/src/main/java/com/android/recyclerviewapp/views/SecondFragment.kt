@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.recyclerviewapp.MainActivity
+import androidx.navigation.fragment.findNavController
 import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.databinding.FragmentSecondBinding
 import com.android.recyclerviewapp.model.Event
@@ -53,7 +53,7 @@ class SecondFragment : Fragment() {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.main_frag_container, FirstFragment.newInstance(mEvent))
                 .commit()
-
+            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
         return binding.root
