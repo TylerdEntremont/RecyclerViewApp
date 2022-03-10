@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.android.recyclerviewapp.R
+import com.android.recyclerviewapp.adapter.EventArrayEditor
 import com.android.recyclerviewapp.databinding.FragmentThirdBinding
 import com.android.recyclerviewapp.model.Event
 import java.text.SimpleDateFormat
@@ -22,6 +23,10 @@ class ThirdFragment : Fragment() {
 
     private val binding by lazy {
         FragmentThirdBinding.inflate(layoutInflater)
+    }
+
+    private val eventArrayEditor by lazy{
+        EventArrayEditor()
     }
 
     private lateinit var event: Event
@@ -46,6 +51,12 @@ class ThirdFragment : Fragment() {
         (getString(R.string.DaysLeft)+((eventDateLong -binding.eventCalendar.date)/86400000 + 1).toString()).also { binding.daysLeft.text = it }
         binding.eventCalendar.date = eventDateLong
 
+        binding.deleteButton.setOnClickListener{
+            eventArrayEditor.remove(event)
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frag_container, FirstFragment.newInstance())
+                .commit()
+        }
 
         return binding.root
     }

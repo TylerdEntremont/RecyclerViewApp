@@ -9,4 +9,5 @@
     <string name="eventDate">EVENT DATE</string>
     <string name="plusSign">a plus sign</string>
     <string name="done">DONE</string>
+    <string name="delete">Delete</string>
 </resources>
