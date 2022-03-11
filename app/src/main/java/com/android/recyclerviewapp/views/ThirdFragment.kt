@@ -11,6 +11,7 @@ import com.android.recyclerviewapp.adapter.EventArrayEditor
 import com.android.recyclerviewapp.databinding.FragmentThirdBinding
 import com.android.recyclerviewapp.model.Event
 import java.text.SimpleDateFormat
+import kotlin.math.floor
 
 
 /**
@@ -48,7 +49,7 @@ class ThirdFragment : Fragment() {
         binding.eventCategoryEt.text=event.category
 
         val eventDateLong = SimpleDateFormat("dd/M/yyyy").parse(event.date).time
-        (getString(R.string.DaysLeft)+((eventDateLong -binding.eventCalendar.date)/86400000 + 1).toString()).also { binding.daysLeft.text = it }
+        (getString(R.string.DaysLeft)+(floor((eventDateLong -binding.eventCalendar.date)/86400000.0) + 1).toLong().toString()).also { binding.daysLeft.text = it }
         binding.eventCalendar.date = eventDateLong
 
         binding.deleteButton.setOnClickListener{

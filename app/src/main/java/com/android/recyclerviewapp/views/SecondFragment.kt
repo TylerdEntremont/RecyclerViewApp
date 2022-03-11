@@ -24,7 +24,7 @@ class SecondFragment : Fragment() {
         FragmentSecondBinding.inflate(layoutInflater)
     }
 
-    private var newDate = ""
+    private var newDate = "1/1/2022"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

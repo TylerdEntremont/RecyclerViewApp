@@ -18,10 +18,10 @@ class EventAdapter(
     // This method will update our data set
     fun updateEventData(event: Event) {
 
-        var date = SimpleDateFormat("dd/M/yyyy").parse(event.date).time
+        val date = SimpleDateFormat("dd/M/yyyy").parse(event.date).time
 
         for (item in eventList) {
-            var itemDate = SimpleDateFormat("dd/M/yyyy").parse(item.date).time
+            val itemDate = SimpleDateFormat("dd/M/yyyy").parse(item.date).time
             if (date <= itemDate) {
                 eventList.add(eventList.indexOf(item), event)
                 notifyItemInserted(eventList.indexOf(event))
