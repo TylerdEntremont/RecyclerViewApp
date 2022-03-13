@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.adapter.EventArrayEditor
 import com.android.recyclerviewapp.databinding.FragmentThirdBinding
@@ -54,9 +55,10 @@ class ThirdFragment : Fragment() {
 
         binding.deleteButton.setOnClickListener{
             eventArrayEditor.remove(event)
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frag_container, FirstFragment.newInstance())
-                .commit()
+            findNavController().navigate(R.id.action_ThirdFragment_to_FirstFragment)
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .replace(R.id.main_frag_container, FirstFragment.newInstance())
+//                .commit()
         }
 
         return binding.root

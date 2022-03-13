@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.databinding.FragmentSecondBinding
 import com.android.recyclerviewapp.model.Event
@@ -49,10 +51,10 @@ class SecondFragment : Fragment() {
 
             val mEvent= Event(binding.eventTitleEt.text.toString(),binding.eventCategoryEt.text.toString(),newDate)
 
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frag_container, FirstFragment.newInstance(mEvent))
-                .commit()
-            //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .replace(R.id.main_frag_container, FirstFragment.newInstance(mEvent))
+//                .commit()
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment, bundleOf(Pair("myEvent", mEvent)))
         }
 
         return binding.root

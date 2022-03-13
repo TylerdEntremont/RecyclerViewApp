@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.recyclerviewapp.R
 import com.android.recyclerviewapp.adapter.EventAdapter
 import com.android.recyclerviewapp.adapter.OnItemClickListener
 import com.android.recyclerviewapp.databinding.FragmentFirstBinding
-import com.android.recyclerviewapp.fragmentNavigation
 import com.android.recyclerviewapp.model.Event
 
 
@@ -42,9 +44,6 @@ class FirstFragment : Fragment(), OnItemClickListener {
                 eventAdapter.updateEventData(event)
             }
             setRetainInstance(true)
-
-
-
         }
     }
 
@@ -60,11 +59,11 @@ class FirstFragment : Fragment(), OnItemClickListener {
         }
 
         binding.addEvent.setOnClickListener {
-            fragmentNavigation(
-                supportFragmentManager = requireActivity().supportFragmentManager,
-                SecondFragment.newInstance()
-            )
-            //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//            fragmentNavigation(
+//                supportFragmentManager = requireActivity().supportFragmentManager,
+//                SecondFragment.newInstance()
+//            )
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
         return binding.root
@@ -72,13 +71,6 @@ class FirstFragment : Fragment(), OnItemClickListener {
 
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @return A new instance of fragment FirstFragment.
-         */
-        @JvmStatic
         fun newInstance(newEvent: Event? = null) =
             FirstFragment().apply {
                 arguments = Bundle().apply {
@@ -89,10 +81,11 @@ class FirstFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onItemClick(event: Event) {
-        fragmentNavigation(
-           supportFragmentManager = requireActivity().supportFragmentManager,
-           ThirdFragment.newInstance(event)
-       )
+        findNavController().navigate(R.id.action_FirstFragment_to_ThirdFragment, bundleOf(Pair("myEvent", event)))
+//        fragmentNavigation(
+//           supportFragmentManager = requireActivity().supportFragmentManager,
+//           ThirdFragment.newInstance(event)
+//       )
     }
 
 

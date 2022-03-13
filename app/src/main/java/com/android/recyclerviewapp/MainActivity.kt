@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //findNavController(R.id.main_frag_container)
 
-        if (savedInstanceState == null)
-        { fragmentNavigation(supportFragmentManager, FirstFragment.newInstance())}
+//        if (savedInstanceState == null)
+//        { fragmentNavigation(supportFragmentManager, FirstFragment.newInstance())}
 
     }
 
